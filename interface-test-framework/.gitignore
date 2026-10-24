@@ -1,0 +1,21 @@
+# 虚拟环境
+.venv/
+venv/
+
+# PyCharm 配置
+.idea/
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# pytest 缓存
+.pytest_cache/
+
+#allure 报告
+allure-results/
+allure-report/
+
+# log与report 日志与报告
+logs/
+reports/

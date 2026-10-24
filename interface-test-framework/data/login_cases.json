@@ -1,0 +1,14 @@
+{
+  "login_success": [
+    {"name": "login_success","username": "admin", "password": "password123", "expected": 200},
+    {"name": "six_chars_valid","username": "user", "password": "123456", "expected": 200}
+  ],
+  "login_invalid": [
+    {"name": "empty_username","username": "", "password": "password123", "expected": 400},
+    {"name": "empty_password","username": "admin", "password": "", "expected": 400},
+    {"name": "password_too_short","username": "admin", "password": "12345", "expected": 400},
+    {"name": "password_too_long","username": "admin", "password": "1111111111111", "expected": 400},
+    {"name": "user_not_exist","username": "nobody", "password": "123456", "expected": 401},
+    {"name": "wrong_password","username": "admin", "password": "password", "expected": 401}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "get_booking_list": [
+    {"name": "all_bookings","params": {}, "bookings_len": 2, "expected":200},
+    {"name": "filter_firstname","params": {"firstname": "Alice"}, "bookings_len": 1, "expected":200}
+  ],
+  "get_booking_detail": [
+    {"name": "exist","id_source": "exist",  "expected_status": 200, "expected_key": "firstname"},
+    {"name": "no_exist","id_source": "no_exist",  "expected_status": 404, "expected_key": "error"}
+  ]
+}
