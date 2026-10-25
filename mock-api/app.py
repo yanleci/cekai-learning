@@ -39,7 +39,7 @@ def login():
 
     # 用户不存在 / 密码错误 -> 统一提示（安全：不泄露用户是否存在）
     if USERS.get(username) != password:
-        return jsonify({"reason": "用户名或密码错误"}), 400
+        return jsonify({"reason": "用户名或密码错误"}), 401
 
     token = str(uuid.uuid4())      # 生成一个随机的 token
     VALID_TOKENS.add(token)
@@ -72,7 +72,6 @@ def get_booking(bid):
     data = BOOKINGS.get(bid)
     if data is None:
         return jsonify({"error": "预订不存在"}), 404
-    data.pop("firstname")
     return jsonify(data)
 
 
